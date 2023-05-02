@@ -3,7 +3,6 @@ const morgan=require('morgan');
 const mongoose=require('mongoose');
 const celular = require('./Schemas/Celular');
 const cliente = require('./Schemas/Cliente')
-const vendedor = require('./Schemas/Vendedor')
 const app=express();
 
 app.set('port',process.env.PORT||3200);
@@ -78,34 +77,6 @@ app.get('/consultaCliente/:id', async(req,res)=>{
 })
 
 
-//Consulta general Vendedor
-app.get('/vendedor', async(req,res)=>{
-    const Vendedores = await Vendedor.find();
-    res.render('vendedor',{Vendedores})
-})
-
-//Insertar Vendedor
-app.post('/insertarVendedor', async(req,res)=>{
-    const VendedorInsertardo = new Vendedor(req.body);
-    await VendedorInsertardo.save();
-    res.redirect("/Vendedor")
-})
-//Eliminar Vendedor
-app.get('/eliminarVendedor/:id', async(req,res)=>{
-    await Vendedor.findOneAndDelete({clave:req.params.id});
-    res.redirect("/Vendedor")
-})
-
-//Actualizar Vendedor
-app.post('/actualizarVendedor/:id', async(req,res)=>{
-    await Vendedor.findOneAndUpdate({clave:req.params.id},req.body);
-    res.redirect("/Vendedor")
-})
-//Consulta individual Vendedor
-app.get('/consultaVendedor/:id', async(req,res)=>{
-    const vendedor1 = await Vendedor.findOne({clave:req.params.id});
-    res.render('editarVendedor',{vendedor1}) 
-})
 
 app.listen(app.get('port'),()=>{
     console.log('Server on port: ' + app.get('port'));
