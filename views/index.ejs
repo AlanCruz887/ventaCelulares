@@ -24,7 +24,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Telefonos</a>
+                                <a class="nav-link active" aria-current="page" href="/cliente">Clientes</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Link</a>
@@ -74,7 +74,7 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <label for="txtColor" class="form-label">Color</label>
-                                    <input type="text" id="txtColor" class="form-control" name="nolor">
+                                    <input type="text" id="txtColor" class="form-control" name="color">
                                 </div>
 
                                 <div class="col-lg-6">
@@ -126,6 +126,7 @@
                                     <td><%= celular.nombre%></td>
                                     <td><%= celular.color%></td>
                                     <td><%= celular.precioVenta%></td>
+                                    <td><%= celular.garantia%></td>
                                     <td><%= celular.existencias%></td>
                                     <td>
                                         <a href="/consultaCelular/<%= celular.codigo%>" class="btn btn-warning"><i class="material-icons">edit</i></a>
