@@ -1,6 +1,6 @@
 const{Schema, model}=require ('mongoose');
 
-const telefonoSchema = new Schema({
+const CelularSchema = new Schema({
     codigo : {
         type : String,
         require : true,
@@ -16,4 +16,4 @@ const telefonoSchema = new Schema({
     versionKey : false, 
     timestamps : true //agrega atributos con fecha y hora
 });
-module.exports = model('telefono',telefonoSchema)
+module.exports = model('celular',CelularSchema)
