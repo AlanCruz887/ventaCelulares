@@ -1,7 +1,7 @@
 const{Schema, model}=require ('mongoose');
 
 const clienteSchema = new Schema({
-    id : {
+    idCliente : {
         type : String,
         require : true,
         unique : true
