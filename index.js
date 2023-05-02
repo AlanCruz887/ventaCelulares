@@ -10,7 +10,7 @@ app.use(express.urlencoded({extended:false}));
 app.use(morgan('dev'));
 app.use(express.json()); 
 
-mongoose.connect("")
+mongoose.connect("mongodb+srv://Alan:HailedSquare881@alan.rbrdfgi.mongodb.net/ventaCelulares?retryWrites=true&w=majority")
 .then(db=> console.log("Mongodb atlas connected"))
 .catch(err=> console.error(err));
 
